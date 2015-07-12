@@ -269,7 +269,7 @@ def search(query, tld='com', lang='en', tbs='0', safe='off', num=10, start=0,
         html = get_page(url)
 
         # Parse the response and process every anchored URL.
-        soup = BeautifulSoup(html)
+        soup = BeautifulSoup(html, 'html.parser')
         anchors = soup.find(id='search').findAll('a')
         for a in anchors:
 
